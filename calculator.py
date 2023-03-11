@@ -9,11 +9,21 @@ def calculate():
     for item in validated_statement:
         statement = statement.replace(item, '')
     operations = [char for char in statement]
-    print(operations)
-    print(validated_statement)
+    priorities = prioritize(operations)
+    print(priorities)
 
 
 
+def prioritize(operations):
+    priorities = []
+    for operation in operations:
+        if operation in ["*", "/"]:
+            priority = 1
+            priorities.append(priority)
+            continue
+        priority = 2
+        priorities.append(priority)
+    return priorities
 
 def get_statement():
     print("enter your statement. it should just contain numbers, +, -, *, /")
