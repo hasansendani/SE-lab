@@ -13,18 +13,19 @@ def calculate():
     start_index = 0
     validated_statement = [float(i) for i in validated_statement]
     for priority in priorities:
-        if priority == 1:
+        if priority != 2:
             validated_statement = operate(validated_statement, operations[start_index], start_index)
             del(priorities[start_index])
             del(operations[start_index])
         start_index += 1
+    start_index = 0
     for priority in priorities:
         if priority == 2:
             validated_statement = operate(validated_statement, operations[start_index], start_index)
             del(priorities[start_index])
             del(operations[start_index])
         start_index += 1
-    print(validated_statement)
+
 
 
 def operate(nums, operator, start_index):
