@@ -18,6 +18,12 @@ def calculate():
             del(priorities[start_index])
             del(operations[start_index])
         start_index += 1
+    for priority in priorities:
+        if priority == 2:
+            validated_statement = operate(validated_statement, operations[start_index], start_index)
+            del(priorities[start_index])
+            del(operations[start_index])
+        start_index += 1
     print(validated_statement)
 
 
