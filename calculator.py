@@ -18,6 +18,8 @@ def calculate():
             del(priorities[start_index])
             del(operations[start_index])
         start_index += 1
+
+
     start_index = 0
     for priority in priorities:
         if priority == 2:
@@ -26,6 +28,9 @@ def calculate():
             del(operations[start_index])
         start_index += 1
 
+    print(validated_statement)
+    print("the final result is:")
+    print(validated_statement[0])
 
 
 def operate(nums, operator, start_index):
