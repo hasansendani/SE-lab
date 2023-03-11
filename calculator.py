@@ -2,7 +2,10 @@ import re
 
 def calculate():
     statement = get_statement()
-    validate_statement(statement)
+    if not validate_statement(statement):
+        return
+
+
 
 
 def get_statement():
@@ -23,7 +26,7 @@ def validate_statement(statement):
             print("input is not valid")
             return False
     print("input is valid")
-    return True
+    return [float(i) for i in statement]
 
 
 
