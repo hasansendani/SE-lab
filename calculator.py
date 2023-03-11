@@ -18,8 +18,9 @@ def validate_statement(statement):
     statement = statement.replace('-', ' ')
     statement = statement.split()
     for item in statement:
-        if not item.isnumeric():
-            print(statement)
+        try:
+            temp = float(item)
+        except:
             print("input is not valid")
             return False
     print("input is valid")
